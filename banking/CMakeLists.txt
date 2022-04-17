@@ -1,5 +1,6 @@
 project(RU)
 add_library(banking STATIC Account.cpp Transaction.cpp)
+target_compile_options(banking PRIVATE "--coverage")
 option(BUILD_TESTS "Build tests" OFF)
 if(BUILD_TESTS)
 	add_subdirectory(third-party/gtest)

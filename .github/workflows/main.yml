@@ -16,9 +16,12 @@ jobs:
             git submodule add --force https://github.com/google/googletest third-party/gtest
         - name: Work
           run: | 
+            cd banking/
             cmake -H. -B_build -DBUILD_TESTS=ON
             cmake --build _build
         - name: Test
-          run: ./_build/check 
+          run: |
+            cd banking/
+            ./_build/check 
 
 

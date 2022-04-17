@@ -1,0 +1,23 @@
+name: lab05
+on:
+  push:
+    branches:
+      - master
+jobs:
+  work:
+      runs-on: ubuntu-latest 
+      steps:
+        - uses: actions/checkout@v2
+        - name: Download
+          run: |
+            sudo apt install g++ cmake
+            mkdir third-party
+            git submodule add --force https://github.com/google/googletest third-party/gtest
+        - name: Work
+          run: | 
+            cmake -H. -B_build -DBUILD_TESTS=ON
+            cmake --build _build
+        - name: Test
+          run: ./_build/check 
+
+

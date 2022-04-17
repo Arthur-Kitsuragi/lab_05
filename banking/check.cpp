@@ -60,7 +60,8 @@ TEST(Transaction, Default_Func) {
 	a.set_fee(5000);
 	EXPECT_EQ(a.Make(Mk, Mk1, 500), false);
 	a.set_fee(1000);
-	EXPECT_EQ(a.Make(Mk, Mk1, 2500), true);
+	Account Mk2(213, 100);
+	EXPECT_EQ(a.Make(Mk1, Mk2, 2500), false);
 
 }
 int main(int argc, char **argv) {

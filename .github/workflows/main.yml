@@ -27,7 +27,7 @@ jobs:
           run: |
             mkdir coverage
             cd coverage
-            lcov -t "test" -o lcov.info -c -d ../banking/_build/Cmakefiles/banking.dir 
+            lcov -t "test" -o lcov.info -c -d ../banking/_build/CmakeFiles/banking.dir 
       
         - name: Coveralls GitHub Action
           uses: coverallsapp/github-action@1.1.3

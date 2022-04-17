@@ -39,6 +39,7 @@ jobs:
         version: 10.x
 
     - name: npm install
+      run: npm install
     - name: Test ${{ matrix.test_number }}
       run: make test-coverage-${{ matrix.test_number }}
     - name: Coveralls Parallel
